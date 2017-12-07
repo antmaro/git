@@ -1,6 +1,8 @@
 # ANNOTATIONS ABOUT GIT
 
 ## Config global parameters (do not use --global option if not necessary)
+You can override the global configuration located in /etc/gitconfig.
+
 Config username:
 
 `$ git config --global(do not use if not global) user.name "pepito"`
@@ -12,6 +14,14 @@ Setup user email:
 To get help from command line:
 
 `$ git help config`
+
+Config the default text editor:
+
+`# git config --global core.exitor vim`
+
+To check your settings
+
+`# git config --list`
 
 ## Store credentials 
 To caching credentials:
@@ -37,6 +47,12 @@ To cloning a remote repository in local
 
 `# git clone https://server`
 
+Check the status of your files:
 
+`# git status`
+
+Tracking new files:
+
+`# git add README`
 
  
