@@ -45,13 +45,21 @@ Go to the repository folder and execute:
 ## CLONING REMOTE REPO
 To cloning a remote repository in local
 
-`# git clone https://server`
+`# git clone https://server/repositorio.git myrepo`
 
 Check the status of your files:
 
 `# git status`
 
+`# git status -s`  --> short status
+
 Tracking new files:
 
 `# git add README`
 
+# IGNORE FILES
+Indicate to git that has to ignore files with a .gitignore file. For example if you want git ignore files that finish with .o or .a or with ~ symbol:
+
+`cat .gitignore
+ *.[oa]
+ *~`
