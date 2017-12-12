@@ -26,7 +26,7 @@ To check your settings
 ## Store credentials 
 To caching credentials:
 
-`$ git config credential.heler store`
+`$ git config credential.helper store`
 
 Setup up caching expire credentials (by default 15 minutes):
 
