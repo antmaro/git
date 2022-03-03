@@ -1,6 +1,8 @@
-= CHEATSHEET git
+= Course
 
-=== Configuration
+https://www.udemy.com/course/git-and-github-complete-guide/learn/lecture/17116144#overviewHEATSHEET[Course source CompleteGitGuide]
+
+== Configuration
 You can override the global configuration located in /etc/gitconfig.
 
 Config username:
@@ -23,7 +25,7 @@ To check your settings
 
 `# git config --list`
 
-## Store credentials 
+=== Store credentials 
 To caching credentials:
 
 `$ git config credential.helper store`
@@ -33,7 +35,7 @@ Setup up caching expire credentials (by default 15 minutes):
 `$ git config --global credential.helper "cache --timeout=3600"`
 
 
-## Avoid SSL issues
+=== Avoid SSL issues
 
 `GIT_SSL_NO_VERIFY=true git clone https://...`
 
@@ -57,7 +59,7 @@ Tracking new files, adding to the staging area:
 
 `# git add README`
 
-# IGNORE FILES
+=== IGNORE FILES
 Indicate to git that has to ignore files with a .gitignore file. For example if you want git ignore files that finish with .o or .a or with ~ symbol:
 
 `cat .gitignore
@@ -69,5 +71,43 @@ Indicate to git that has to ignore files with a .gitignore file. For example if 
 `# git log` --> history of changes (commits)
 
 `#git checkoug` --> checkout commit or branch, this overwrite the content of your working directory
+
+=== Git low-level commands
+
+To see the content of a blob, tree, commit or tag
+`git cat-file -p <SHA1>`
+
+For example:
+
+[source,yaml]
+git cat-file -p 1acba5
+tree 0b7af1531d775dba317cb934aaca5826d907bb2f
+parent 3e58975626fc4e08eca13b40ad65590982d6f1da
+author Antonio Mari Romero <anmaro@gmail.com> 1645790203 +0100
+committer Antonio Mari Romero <anmaro@gmail.com> 1645790203 +0100
+
+First commit in the BR-1 branch`
+
+`git ls-files-s` --> List staged files
+
+== Branches
+
+Default branch `master` and HEAD is a pointer to the current branch.
+
+=== HEAD
+HEAD is a reference to the currently checked-out branch or commit.
+
+Pointer is located in the `.git/HEAD` file, and default pointer is `ref:refs/heads/master`.
+
+=== Git Branches management
+
+- `git branch` : list all local branches
+- `git branch <name>` : Create a new branch
+- `git checkout <name>` : Checkout to specific branch
+- `git branch -d <name>` : Delete specific branch
+- `git branch -m <old> <new>` : Rename specific branch
+
+[NOTE]
+Shortcut to create and checkout to new branch: `git checkout -b <new branch>`
 
 
